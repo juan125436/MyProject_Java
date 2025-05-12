@@ -22,4 +22,6 @@ public class CuentaBancaria extends Cliente{
     public void setSaldo(int saldo){
         this.saldo=saldo;
     }
+
+    
 }

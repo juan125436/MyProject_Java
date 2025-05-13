@@ -14,4 +14,10 @@ public class ErrorException extends Exception{
             throw new ErrorException("ERROR");
         }
     }
+    public static void errorCifra(int cifra) throws ErrorException{
+        CuentaBancaria.BCI=(CuentaBancaria) CuentaBancaria.Cuentas_Banco_BCI.get(CuentaBancaria.id_estatico);
+        if((cifra>100000 && cifra<1000) || (cifra>CuentaBancaria.BCI.getSaldo())) {
+            throw new ErrorException("EL CAJERO ENCONTRO UN ERROR DE CIFRA O SUELDO INFERIOR..");
+        }
+    }
 }

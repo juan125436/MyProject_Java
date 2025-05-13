@@ -15,7 +15,8 @@ public class Main {
                 opcion=datos.nextLine().toLowerCase();
                 ErrorException.errorINICIO(opcion);
             } catch (ErrorException e){
-                System.out.println(e.getMessage());return;
+                System.out.println(e.getMessage());
+                return;
             }
             registrarORiniciar(opcion);
             if(nuevoUsuario) {
@@ -50,7 +51,7 @@ public class Main {
                 CrearCuentaException.checarNombre(apellidos);
             } catch (CrearCuentaException e){
                 System.out.println(e.getMessage());
-                break;
+                return;
             }
             try{
                 System.out.print("Digite clave: ");
@@ -85,6 +86,7 @@ public class Main {
             IniciarSesionException.errorClave(id, clave, Cuentas_Banco_BCI);
         } catch(IniciarSesionException e) {
             System.out.println(e.getMessage());
+            return;
         }
         System.out.println("============================");
         System.out.println("BIENVENIDO/A A SU CUENTA BCI");
@@ -100,6 +102,7 @@ public class Main {
                  ErrorException.errorMenu(opcion);
                 } catch (ErrorException e){
                     System.out.println(e.getMessage());
+                    return;
                 }
                 if(opcion.equals("retirar")){
                 } else if(opcion.equals("depositar")){

@@ -20,4 +20,10 @@ public class ErrorException extends Exception{
             throw new ErrorException("EL CAJERO ENCONTRO UN ERROR DE CIFRA O SUELDO INFERIOR..");
         }
     }
+    public static void verificadorSaldo(CuentaBancaria BCI) throws ErrorException{
+        CuentaBancaria.BCI=(CuentaBancaria) CuentaBancaria.Cuentas_Banco_BCI.get(CuentaBancaria.id_estatico);
+        if(CuentaBancaria.BCI.getSaldo()<1000){
+            throw new ErrorException("NO PUEDES ACCEDER A ESTA OPCION\nSALDO INSUFICIENTE");
+        }
+    }
 }

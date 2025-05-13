@@ -61,6 +61,12 @@ public class CuentaBancaria extends Cliente{
                     return;
                 }
                 if(opcion.equals("retirar")){
+                    try {
+                        BCI=(CuentaBancaria) Cuentas_Banco_BCI.get(id_estatico);
+                        ErrorException.verificadorSaldo(BCI);
+                    } catch (ErrorException e){
+                        System.exit(0);
+                    }
                     Main.retirar();
                 } else if(opcion.equals("depositar")){
                     BCI = (CuentaBancaria) Cuentas_Banco_BCI.get(id_estatico);
